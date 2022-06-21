@@ -1,0 +1,106 @@
+
+
+
+.container{
+    display:grid;
+    flex-wrap:wrap;
+   /*justify-content: space-around;/*flex-start;기본값 - justify는 현재 축 방향으로 정렬.*/
+  /* justify-content:center;*/
+   /*align-items: flex-start;*/
+   /*flex-direction:column;*/
+   height: 100vh; /*viewpoint 100% 로 채우기.*/
+    background: lightgray;
+    /*grid-template-columns: 40% 60%;*/
+    /*grid-template-columns: 4fr 6fr;/*이게 더 깔끔함*/
+    grid-template-columns:200px 1fr;
+    grid-template-columns:repeat(3,1fr);
+    /*align-items:end;
+      justify-items:end;
+    */
+    grid-auto-rows:minmax(10em,auto);/*앞이 minimum 높이, em은 폰트의 몇 배 높이라는 뜻. 10배*/
+     grid-gap:0.5rem;
+}
+/*flex는 container에 적용을 한다. 그러면 자식들이 어떻게
+배치가 된다.*/
+/*align 은 수직 방향 정렬*/
+
+.item{
+    /*flex-basis:0;*/
+    /*flex-basis:auto;*/
+    background:rgba(255,0,0,0.5);
+}
+
+.item:nth-child(5){
+   /* justify-self:center;
+    align-self:center;
+    */
+}
+
+.item:nth-child(1){
+    grid-column: 1/4; /*1~4까지를 차지한다.*/
+    /*column 은 열, row는 행*/
+}
+
+button{
+    background: #228be6;
+    color:white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    box-shadow: 0px 2px 2px lightgray;
+    position:relative;
+    left: 10em;
+    top:7em;
+}
+
+
+.item:nth-child(4){
+    grid-column: 3;
+    grid-row:2/4;
+}
+.item:nth-child(1){
+    flex:1;
+    /*flex-grow:1;
+    flex-shrink:
+    /*flex-grow 는 원래 크기+여백의 비율.item의 flex-basis을 0으로 해줘야
+    비율 맞게 각각 들어감.*/
+    /*그냥 flex인 경우에는  flex:1, flex:2, flex:1로 1:2:1 간단하게 해줄 수 있음.*/
+    /*align-self:flex-start;*/
+    /*order:3;*/
+}
+
+.item:nth-child(2){
+    flex:1;
+    /*flex-grow:2;*/
+    /*align-self: center;*/
+
+}
+.item:nth-child(3){
+    flex:1;
+    /*flex-grow:1;*/
+    /*align-self:flex-end;*/
+  
+}
+
+.item:nth-child(4){
+    flex:1;
+}
+
+.item:nth-child(5){
+    flex:1;
+
+}
+.item:nth-child(6){
+    flex:1;
+
+}
+.item:nth-child(7){
+    flex:1;
+
+}
+.item:nth-child(odd){
+    background: rgba(255,255,0,0.5);
+}
